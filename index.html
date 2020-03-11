@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title>SCAVENGER beta</title>
+        <link href="/ASSETS/CSS/styles.css" type="text/css" rel="stylesheet">
+        <script src="/ASSETS/JAVA/script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <a>S C A V E N G E R</a>
+            </div>
+            <div class="item-table">
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>ITEM</th>
+                            <th class="middle">PRICE</th>
+                            <th>AMOUNT</th>
+                        </tr>
+                        <tr>
+                            <th class="green">STEEL</th>
+                            <th class="middle green" id=""priceSteel">30</th>
+                            <th class="green"><div class="quantity">
+                                <input class="btn" type="button" onclick="addSteel()" value="↑">
+                                <div class="amount" id="steel">0</div>
+                                <input class="btn" type="button" onclick="minusSteel()" value="↓">
+                            </div></th>
+                        </tr>
+                        <tr>
+                            <th class="green">POLYMER</th>
+                            <th class="middle green" id="pricePoly">25</th>
+                            <th class="green"><div class="quantity">
+                                <input class="btn" type="button" onclick="addPoly()" value="↑">
+                                <div class="amount"id="poly">0</div>
+                                <input class="btn" type="button" onclick="minusPoly()" value="↓">
+                            </div></th>
+                        </tr>
+                        <tr>
+                            <th class="green" >CIRCUITS</th>
+                            <th class="middle green"id="priceCirc">45</th>
+                            <th class="green"><div class="quantity">
+                                <input class="btn" type="button" onclick="addCirc()" value="↑">
+                                <div class="amount" id="circ">0</div>
+                                <input class="btn" type="button" onclick="minusCirc()" value="↓">
+                            </div></th>
+                        </tr>
+                        <tr>
+                            <th class="green">SOLDERING IRON</th>
+                            <th class="middle green" id="priceSolder">10</th>
+                            <th class="green"><div class="quantity">
+                                <input class="btn" type="button" onclick="addSolder()" value="↑">
+                                <div class="amount" id="solder">0</div>
+                                <input class="btn" type="button" onclick="minusSolder()" value="↓">
+                            </div></th>
+                        </tr>
+                        <tr>
+                            <th class="green">CABLES</th>
+                            <th class="middle green" id="priceCables">20</th>
+                            <th class="green"><div class="quantity">
+                                <input class="btn" type="button" onclick="addCables()" value="↑">
+                                <div class="amount" id="cables">0</div>
+                                <input class="btn" type="button" onclick="minusCables()" value="↓">
+                            </div></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-bottom">
+                    <table>
+                        <tr>
+                            <th class="big green">TOTAL</th>
+                            <th class="small green " id="totalSum">0</th>
+                        </tr>
+                        <tr>
+                            <th class="big green" style="cursor:pointer;">BUY</th>
+                            <th class="small red" onclick="cancel()" style="cursor:pointer;">CANCEL</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu">
+                    <div class="left">Tabela com itens e abaixo tabela com craft</div>
+                    <div class="right">venda de itens</div>
+                </div>
+             </div>
+        </div>
+    </body>
+</html>

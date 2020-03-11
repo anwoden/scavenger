@@ -1,0 +1,151 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-family: "F25 Bank Printer";
+}
+
+/*site*/
+.container{
+    display: flex;
+    flex: 1;
+    height: 900px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title {
+    display: flex;
+    height: 50px;
+    width: 900px;
+    border: solid 5px white;
+    justify-content: center;
+    line-height: 50px;
+    animation: pulse2 6s ease infinite;
+}
+.item-table{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 600px;
+    border-left: solid 5px white;
+    border-right: solid 5px white;
+    border-bottom: solid 5px white;
+    font-size: 12px;
+    font-family: "Nouveau IBM";
+}
+table th{
+    width: 300px;
+    height: 30px;
+   /*border-bottom: dashed 2px white;*/ 
+}
+table th .green:hover{
+    animation: pulse 1s ease infinite;
+}
+/*.middle{
+    border-left: solid 2px white;
+    border-right: solid 2px white;
+}*/
+.quantity{
+    display: flex;
+}
+.btn{
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    border: NONE;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+.btn:hover{
+    background-color: #27702a;
+}
+.amount {
+    width: 200px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.test {
+    border: solid 1px white;
+    height: 50px;
+}
+.table-bottom{
+    width: 900px;
+    height: 68px;
+}
+.big {
+    width: 450px;
+}
+.small {
+    width: 450px;
+}
+.big,.small{
+    font-size: 20px;
+}
+.green:hover {
+    animation: pulse 1s ease infinite;
+}
+.red:hover{
+    animation: pulse3 1s ease infinite;
+}
+.menu{
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    justify-content: center;
+}
+.left{
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.right{
+    text-align: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+/*test pulse*/
+@keyframes pulse {
+	0% {
+        background-color: black;
+    }
+    50% {
+        background-color: #27702a;
+    }
+    100% {
+        background-color: black;
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        background-color: black;
+    }
+    50% {
+        background-color: #2a6fbe;
+    }
+    100% {
+        background-color: black;
+    }
+}
+
+@keyframes pulse3 {
+    0% {
+        background-color: black;
+    }
+    50% {
+        background-color: #be2a2a;
+    }
+    100% {
+        background-color: black;
+    }
+}
