@@ -162,11 +162,21 @@ function valueTotal() {
 }
 /*
 TODO:
+monetário:
 1. implementar a compra;
     1.1. o campo BUY deve verificar uma segunda vez a soma dos valores.
         SE o valor permanecer inalterado, debitar da carteira;
         CASO CONTRÁRIO atualizar o campo de soma e então debitar da carteira;
 2. A carteira deve ser perfeitamente capaz de se atualizar;
-3. A lista de items armazenados deve obedecer um limite de 10 items cada;
+3. A lista de items armazenados deve obedecer um limite de 10 items cada.
+
+técnico:
+1. Implementar o timer que o cart fica em campo pegando itens;
+2. implementar o sistema de SALVAGE (1 junk = 25% chance de reverter em STEEL e 10% de chance de reverter em poly, por exemplo);
+3. implementar o sistema de venda (1 junk = 10 créditos, etc);
+4. implementar o CRAFT (3 junk + 2 solder + 2 circuits = Radar);
+5. implementar o sistema de APPLY e SELL TECH;
+    5.1. 1 radar = +5% chance de vir Junk no cart;
+    5.1 1 radar = 50 créditos, por exemplo;
 */
 

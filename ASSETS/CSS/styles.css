@@ -32,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 900px;
-    height: 600px;
+    height: 610px;
     border-left: solid 5px white;
     border-right: solid 5px white;
     border-bottom: solid 5px white;
@@ -116,7 +116,7 @@ table th .green:hover{
 .storage {
     display: flex;
 }
-.parts {
+.parts, .salvage {
     margin-left: 21px;
     width: 200px;
     display: flex;
@@ -124,12 +124,43 @@ table th .green:hover{
 .parts table th:hover {
     animation: pulse 1s ease infinite;
 }
+.action {
+    display: flex;
+    margin-left: 21px;
+    margin-top: 10px;
+    width: 400px;
+}
+.sendBtn{
+    width: 150px;
+    height: 58px;
+    margin-top: 5px;
+    background-color: black;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: "Pixeled Regular";
+    cursor: pointer;
+}
+.actBtn {
+    width: 250px;
+    background-color: black;
+    color: white;
+    border: none;
+    margin-top: 5px;
+    font-family: "Pixeled Regular";
+    font-size: 9px;
+    cursor: pointer;
+}
+.blue:hover{
+    animation: pulse2 1s ease infinite;
+}
 .right{
     text-align: center;
     display: flex;
     flex: 1;
     flex-direction: column;
 }
+
 /*test pulse*/
 @keyframes pulse {
 	0% {
