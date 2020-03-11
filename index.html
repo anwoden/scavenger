@@ -19,6 +19,7 @@
                             <th>ITEM</th>
                             <th class="middle">PRICE</th>
                             <th>AMOUNT</th>
+                            <th>TOTAL</th>
                         </tr>
                         <tr>
                             <th class="green">STEEL</th>
@@ -28,6 +29,7 @@
                                 <div class="amount" id="steel">0</div>
                                 <input class="btn" type="button" onclick="minusSteel()" value="↓">
                             </div></th>
+                            <th class="green" id="totalSteel">0</th>
                         </tr>
                         <tr>
                             <th class="green">POLYMER</th>
@@ -37,6 +39,7 @@
                                 <div class="amount"id="poly">0</div>
                                 <input class="btn" type="button" onclick="minusPoly()" value="↓">
                             </div></th>
+                            <th class="green" id="totalPoly">0</th>
                         </tr>
                         <tr>
                             <th class="green" >CIRCUITS</th>
@@ -46,6 +49,7 @@
                                 <div class="amount" id="circ">0</div>
                                 <input class="btn" type="button" onclick="minusCirc()" value="↓">
                             </div></th>
+                            <th class="green" id="totalCirc">0</th>
                         </tr>
                         <tr>
                             <th class="green">SOLDERING IRON</th>
@@ -55,6 +59,7 @@
                                 <div class="amount" id="solder">0</div>
                                 <input class="btn" type="button" onclick="minusSolder()" value="↓">
                             </div></th>
+                            <th class="green" id="totalSolder">0</th>
                         </tr>
                         <tr>
                             <th class="green">CABLES</th>
@@ -64,14 +69,15 @@
                                 <div class="amount" id="cables">0</div>
                                 <input class="btn" type="button" onclick="minusCables()" value="↓">
                             </div></th>
+                            <th class="green" id="totalCables">0</th>
                         </tr>
                     </table>
                 </div>
                 <div class="table-bottom">
                     <table>
                         <tr>
-                            <th class="big green">TOTAL</th>
-                            <th class="small green " id="totalSum">0</th>
+                            <th class="big green" style="cursor:pointer;" onclick="valueTotal()">GET TOTAL</th>
+                            <th class="small green " id="totalSum">???</th>
                         </tr>
                         <tr>
                             <th class="big green" style="cursor:pointer;">BUY</th>
@@ -80,7 +86,42 @@
                     </table>
                 </div>
                 <div class="menu">
-                    <div class="left">Tabela com itens e abaixo tabela com craft</div>
+                    <div class="left">
+                        <div class="bank">
+                            <table>
+                                <tr>
+                                    <th>CREDITS:</th>
+                                    <th id="storedCash">0</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="storage">
+                            <div class="parts">
+                                <table>
+                                    <tr>
+                                        <th>STEEL:</th>
+                                        <th id="storedSteel">0</th>
+                                    </tr>
+                                    <tr>
+                                        <th>POLYMER:</th>
+                                        <th id="storedPoly">0</th>
+                                    </tr>
+                                    <tr>
+                                        <th>CIRCUITS:</th>
+                                        <th id="storedCirc">0</th>
+                                    </tr>
+                                    <tr>
+                                        <th>SOLDERING IRON:</th>
+                                        <th id="storedSolder">0</th>
+                                    </tr>
+                                    <tr>
+                                        <th>CABLES:</th>
+                                        <th id="storedCables">0</th>
+                                    </tr>
+                                </table>
+                            </div>                            
+                        </div>
+                    </div>
                     <div class="right">venda de itens</div>
                 </div>
              </div>
