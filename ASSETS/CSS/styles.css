@@ -131,6 +131,7 @@ table th .green:hover{
     width: 400px;
 }
 .sendBtn{
+    outline: none;
     width: 150px;
     height: 58px;
     margin-top: 5px;
@@ -142,6 +143,7 @@ table th .green:hover{
     cursor: pointer;
 }
 .actBtn {
+    outline: none;
     width: 250px;
     background-color: black;
     color: white;

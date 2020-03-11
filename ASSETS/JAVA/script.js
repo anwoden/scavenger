@@ -163,12 +163,7 @@ function valueTotal() {
 /*
 TODO:
 monetário:
-1. implementar a compra;
-    1.1. o campo BUY deve verificar uma segunda vez a soma dos valores.
-        SE o valor permanecer inalterado, debitar da carteira;
-        CASO CONTRÁRIO atualizar o campo de soma e então debitar da carteira;
-2. A carteira deve ser perfeitamente capaz de se atualizar;
-3. A lista de items armazenados deve obedecer um limite de 10 items cada.
+1. A lista de items armazenados deve obedecer um limite de 10 items cada (mais pra frente)
 
 técnico:
 1. Implementar o timer que o cart fica em campo pegando itens;
@@ -179,4 +174,29 @@ técnico:
     5.1. 1 radar = +5% chance de vir Junk no cart;
     5.1 1 radar = 50 créditos, por exemplo;
 */
+
+function buyItem(){
+    var check = parseInt(valueTotal());
+    var wallet = parseInt(document.getElementById("wallet").innerHTML);
+    var purchase = parseInt(document.getElementById("totalSum").innerHTML);
+
+    check;
+    document.getElementById("wallet").innerHTML = wallet-purchase;
+
+    var amountSteel = parseInt(document.getElementById("steel").innerHTML);
+    var amountPoly = parseInt(document.getElementById("poly").innerHTML);
+    var amountCirc = parseInt(document.getElementById("circ").innerHTML);
+    var amountSolder = parseInt(document.getElementById("solder").innerHTML);
+    var amountCables = parseInt(document.getElementById("cables").innerHTML);
+    
+    document.getElementById("storedSteel").innerHTML = parseInt(document.getElementById("storedSteel").innerHTML)+amountSteel;
+    document.getElementById("storedPoly").innerHTML = parseInt(document.getElementById("storedPoly").innerHTML)+amountPoly;
+    document.getElementById("storedCirc").innerHTML = parseInt(document.getElementById("storedCirc").innerHTML)+amountCirc;
+    document.getElementById("storedSolder").innerHTML = parseInt(document.getElementById("storedSolder").innerHTML)+amountSolder;
+    document.getElementById("storedCables").innerHTML = parseInt(document.getElementById("storedCables").innerHTML)+amountCables;
+    cancel();
+    
+
+    
+}
 
