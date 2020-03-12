@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "F25 Bank Printer";
+    user-select: none;
 }
 
 /*site*/
@@ -82,11 +83,6 @@ table th .green:hover{
 }
 .big {
     width: 450px;
-}
-.small {
-    width: 450px;
-}
-.big,.small{
     font-size: 12px;
 }
 .green:hover {
