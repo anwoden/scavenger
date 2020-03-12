@@ -218,7 +218,7 @@ function sellItem(){
 }
 
 function closeModal(){
-    document.getElementById("purchase").play();
+    document.getElementById("click").play();
     document.getElementById("modalFunds").style.display=['none'];    
 }
 
@@ -230,4 +230,7 @@ function clickAudio(){
 }
 function purchaseAudio(){
     document.getElementById("purchase").play();
+}
+function clickAudio2() {
+    document.getElementById("click2").play();
 }
