@@ -183,8 +183,11 @@ function buyItem(){
     check;
     if(wallet<purchase){
         cancel();
+        document.getElementById("erroraudio").play();
         document.getElementById("modalFunds").style.display=['block'];
     } else {
+        valueTotal();
+        document.getElementById("purchase").play();
         document.getElementById("wallet").innerHTML = wallet - purchase;
     }
 
@@ -215,5 +218,13 @@ function sellItem(){
 }
 
 function closeModal(){
+    document.getElementById("click").play();
     document.getElementById("modalFunds").style.display=['none'];    
+}
+
+
+
+//audios
+function clickAudio(){
+    document.getElementById("click").play();
 }
