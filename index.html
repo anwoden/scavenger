@@ -8,6 +8,16 @@
         <script src="/ASSETS/JAVA/script.js" type="text/javascript"></script>
     </head>
     <body>
+        <div class="modalwindow" style="display:none;" id="modalFunds">
+            <div class="modalcontent">
+                <div class="modaltitle">
+                    <h1 class="text">INSUFFICIENT FUNDS</h1>
+                </div>
+                <div class="closemodal">
+                    <h1 class="closebtn" onclick="closeModal()">OK</h1>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="title">
                 <a>S C A V E N G E R</a>
@@ -91,7 +101,7 @@
                             <table>
                                 <tr>
                                     <th>CREDITS:</th>
-                                    <th id="wallet">99999</th>
+                                    <th id="wallet">999</th>
                                 </tr>
                             </table>
                         </div>
@@ -123,24 +133,24 @@
                             <div class="salvage">
                                 <table>
                                     <tr>
-                                        <th>JUNK:</th>
-                                        <th id="storedJunk">0</th>
+                                        <th class="green">JUNK:</th>
+                                        <th class="green" id="storedJunk">0</th>
                                     </tr>
                                     <tr>
-                                        <th>PLASTIC:</th>
-                                        <th id="storedPlastic">0</th>
+                                        <th class="green">PLASTIC:</th>
+                                        <th class="green" id="storedPlastic">0</th>
                                     </tr>
                                     <tr>
-                                        <th>TECH:</th>
-                                        <th id="storedTech">0</th>
+                                        <th class="green">TECH:</th>
+                                        <th class="green" id="storedTech">0</th>
                                     </tr>
                                     <tr>
-                                        <th>PARTS:</th>
-                                        <th id="storedParts">0</th>
+                                        <th class="green">PARTS:</th>
+                                        <th class="green" id="storedParts">0</th>
                                     </tr>
                                     <tr>
-                                        <th>RUBBER:</th>
-                                        <th id="storedRubber">0</th>
+                                        <th class="green">RUBBER:</th>
+                                        <th class="green" id="storedRubber">0</th>
                                     </tr>
                                 </table>
                             </div>
@@ -156,7 +166,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="right">Parte de CRAFT/APPLY/SELL TECH</div>
+                    <div class="right">
+                        <div class="craftPanel">
+                           
+                        </div>
+                    </div>
                 </div>
              </div>
         </div>

@@ -181,7 +181,12 @@ function buyItem(){
     var purchase = parseInt(document.getElementById("totalSum").innerHTML);
 
     check;
-    document.getElementById("wallet").innerHTML = wallet-purchase;
+    if(wallet<purchase){
+        cancel();
+        document.getElementById("modalFunds").style.display=['block'];
+    } else {
+        document.getElementById("wallet").innerHTML = wallet - purchase;
+    }
 
     var amountSteel = parseInt(document.getElementById("steel").innerHTML);
     var amountPoly = parseInt(document.getElementById("poly").innerHTML);
@@ -194,9 +199,21 @@ function buyItem(){
     document.getElementById("storedCirc").innerHTML = parseInt(document.getElementById("storedCirc").innerHTML)+amountCirc;
     document.getElementById("storedSolder").innerHTML = parseInt(document.getElementById("storedSolder").innerHTML)+amountSolder;
     document.getElementById("storedCables").innerHTML = parseInt(document.getElementById("storedCables").innerHTML)+amountCables;
-    cancel();
-    
-
-    
+    cancel();     
 }
 
+function sendCart(){
+    console.log("implementar CART");
+}
+
+function salvageItem() {
+    console.log("implementar SALVAGE");
+}
+
+function sellItem(){
+    console.log("implementar VENDA");
+}
+
+function closeModal(){
+    document.getElementById("modalFunds").style.display=['none'];    
+}

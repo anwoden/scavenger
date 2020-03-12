@@ -108,7 +108,7 @@ table th .green:hover{
     display: flex;
     width: 435px;
     height: 50px;  
-    margin-top: 10px;     
+    margin-top: 10px;
 }
 .bank table th:hover {
     animation: pulse2 1s ease infinite;
@@ -129,26 +129,30 @@ table th .green:hover{
     margin-left: 21px;
     margin-top: 10px;
     width: 400px;
+    justify-content: center;
 }
 .sendBtn{
     outline: none;
-    width: 150px;
-    height: 58px;
+    width: 200px;
+    height: 59px;
     margin-top: 5px;
-    background-color: black;
+    background-color: transparent;
     outline: none;
     border: none;
     color: white;
     font-family: "Pixeled Regular";
     cursor: pointer;
+    text-align: center;
 }
 .actBtn {
+    text-align: center;
     outline: none;
-    width: 250px;
-    background-color: black;
+    width: 200px;
+    background-color: transparent;
     color: white;
     border: none;
     margin-top: 5px;
+    margin-left: 5px;
     font-family: "Pixeled Regular";
     font-size: 9px;
     cursor: pointer;
@@ -161,7 +165,18 @@ table th .green:hover{
     display: flex;
     flex: 1;
     flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
 }
+.craftPanel {
+    background-color: azure;
+    display: flex;
+    width: 400px;
+    height: 293px;
+    margin-left: 2px;
+    
+}
+
 
 /*test pulse*/
 @keyframes pulse {
@@ -198,4 +213,63 @@ table th .green:hover{
     100% {
         background-color: black;
     }
+}
+
+@keyframes pulse4 {
+    0% {
+        background-color: #be2a2a;
+    }
+    50% {
+        background-color: #fc8f8f;
+    }
+    100% {
+        background-color: #be2a2a;
+    }
+}
+
+/*modal funds teste*/
+.modalwindow {
+    display: flex;
+    flex: 1;
+    height: 660px;
+    width: 900px;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    align-items: center;
+}
+.modalcontent {
+    width: 900px;
+    height: 120px;
+    background-color: #be2a2a;
+    display: flex;
+    margin-top: 250px;
+    justify-content: center;
+    align-items: center;
+}
+.modaltitle{
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+.closemodal {
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    display: flex;
+    text-align: center;    
+}
+.closebtn{
+    display: flex;
+    width: 300px;
+    height: 90px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px white;
+    cursor: pointer;
+}
+.closebtn:hover{
+    animation: pulse4 1s ease infinite;
 }
