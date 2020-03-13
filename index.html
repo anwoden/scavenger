@@ -91,12 +91,12 @@
                 <div class="table-bottom">
                     <table>
                         <tr>
-                            <th class="big green" style="cursor:pointer;" onclick="valueTotal();clickAudio2()">GET TOTAL</th>
+                            <th class="big green" style="cursor:pointer;" onclick="valueTotal();clickAudio()">GET TOTAL</th>
                             <th class="big green " id="totalSum">0</th>
                         </tr>
                         <tr>
                             <th class="big green" style="cursor:pointer;" onclick="buyItem()">BUY</th>
-                            <th class="big red" onclick="cancel();clickAudio()" style="cursor:pointer;">CANCEL</th>
+                            <th class="big red" onclick="cancel();clickAudio2()" style="cursor:pointer;">CANCEL</th>
                         </tr>
                     </table>
                 </div>
@@ -162,12 +162,12 @@
                         </div>
                         <div class="action">
                             <div class="send">
-                                <input class="sendBtn blue" type="button" value="SEND CART" onclick="sendCart()">
+                                <input class="sendBtn blue" type="button" value="SEND CART" onclick="sendCart(); clickAudio()">
                             </div>
                             <div class="other">
-                                <input class="actBtn green" type="button" value="SALVAGE" onclick="salvageItem()">
+                                <input class="actBtn green" type="button" value="SALVAGE" onclick="salvageItem(); clickAudio2()">
                                 <br>
-                                <input class="actBtn red" type="button" value="SELL" onclick="sellItem()">
+                                <input class="actBtn red" type="button" value="SELL" onclick="sellItem(); purchaseAudio()">
                             </div>
                         </div>
                     </div>

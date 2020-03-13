@@ -218,7 +218,7 @@ function sellItem(){
 }
 
 function closeModal(){
-    document.getElementById("click").play();
+    document.getElementById("click2").play();
     document.getElementById("modalFunds").style.display=['none'];    
 }
 
