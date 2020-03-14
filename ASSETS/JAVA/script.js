@@ -160,20 +160,8 @@ function valueTotal() {
 
     document.getElementById("totalSum").innerHTML = a+b+c+d+e;
 }
-/*
-TODO:
-monetário:
-1. A lista de items armazenados deve obedecer um limite de 10 items cada (mais pra frente)
 
-técnico:
-1. Implementar o timer que o cart fica em campo pegando itens;
-2. implementar o sistema de SALVAGE (1 junk = 25% chance de reverter em STEEL e 10% de chance de reverter em poly, por exemplo);
-3. implementar o sistema de venda (1 junk = 10 créditos, etc);
-4. implementar o CRAFT (3 junk + 2 solder + 2 circuits = Radar);
-5. implementar o sistema de APPLY e SELL TECH;
-    5.1. 1 radar = +5% chance de vir Junk no cart;
-    5.1 1 radar = 50 créditos, por exemplo;
-*/
+
 
 function buyItem(){
     var check = parseInt(valueTotal());
@@ -234,3 +222,12 @@ function purchaseAudio(){
 function clickAudio2() {
     document.getElementById("click2").play();
 }
+
+//LOOTS:
+
+
+//CART:
+
+
+
+//CRAFT:
