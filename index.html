@@ -13,13 +13,49 @@
         <audio id="click2" src="ASSETS/IMG/Audio/click2.mp3"></audio>
     </head>
     <body>
-        <div class="modalwindow" style="display:none;" id="modalFunds">
+        <div class="modalwindow" style="display:none;" id="modalScreen">
             <div class="modalcontent">
                 <div class="modaltitle">
                     <h1>INSUFFICIENT FUNDS</h1>
                 </div>
                 <div class="closemodal">
                     <h1 class="closebtn" onclick="closeModal()">OK</h1>
+                </div>
+            </div>
+        </div>
+        <div class="modalwindow" style="display: none;" id="modalScreenLoot">
+            <div class="modalLoot">
+                <div class="LootTitle">
+                    <a>CART LOOT</a>
+                </div>
+                <div class="lootTable">
+                    <table>
+                        <tr>
+                            <th>JUNK:</th>
+                            <th id="lootJunk">0</th>
+                        </tr>
+                        <tr>
+                            <th>PLASTIC:</th>
+                            <th id="lootPlastic">0</th>
+                        </tr>
+                        <tr>
+                            <th>TECH:</th>
+                            <th id="lootTech">0</th>
+                        </tr>
+                        <tr>
+                            <th>PARTS:</th>
+                            <th id="lootParts">0</th>
+                        </tr>
+                        <tr>
+                            <th>RUBBER:</th>
+                            <th id="lootRubber">0</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="confirmLoot">
+                    <div class="OKbutton" onclick="closeModalLoot()">
+                        <a>OK</a>
+                    </div>
                 </div>
             </div>
         </div>

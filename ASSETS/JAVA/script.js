@@ -172,7 +172,7 @@ function buyItem(){
     if(wallet<purchase){
         cancel();
         document.getElementById("erroraudio").play();
-        document.getElementById("modalFunds").style.display=['block'];
+        document.getElementById("modalScreen").style.display=['block'];
     } else {
         valueTotal();
         document.getElementById("purchase").play();
@@ -194,8 +194,34 @@ function buyItem(){
 }
 
 function sendCart(){
-    console.log("implementar CART");
+    setTimeout(() => {
+        getLoot();
+    }, 3000);
 }
+
+function getLoot(){
+    document.getElementById("erroraudio").play(); 
+    document.getElementById("modalScreenLoot").style.display=['block'];
+
+    var lootJunk = parseInt(document.getElementById("lootJunk").innerHTML);
+    var lootPlastic = parseInt(document.getElementById("lootPlastic").innerHTML);
+    var lootTech = parseInt(document.getElementById("lootTech").innerHTML);
+    var lootParts = parseInt(document.getElementById("lootParts").innerHTML);
+    var lootRubber = parseInt(document.getElementById("lootRubber").innerHTML);
+
+    document.getElementById("lootJunk").innerHTML = lootJunk + Math.floor(Math.random()*15);
+    document.getElementById("lootPlastic").innerHTML = lootPlastic + Math.floor(Math.random()*10);
+    document.getElementById("lootTech").innerHTML = lootTech + Math.floor(Math.random()*5);
+    document.getElementById("lootParts").innerHTML = lootParts + Math.floor(Math.random()*20);
+    document.getElementById("lootRubber").innerHTML = lootRubber + Math.floor(Math.random()*15);
+
+    document.getElementById("storedJunk").innerHTML = parseInt(document.getElementById("storedJunk").innerHTML)+parseInt(document.getElementById("lootJunk").innerHTML);
+    document.getElementById("storedPlastic").innerHTML = parseInt(document.getElementById("storedPlastic").innerHTML)+parseInt(document.getElementById("lootPlastic").innerHTML);
+    document.getElementById("storedTech").innerHTML = parseInt(document.getElementById("storedTech").innerHTML)+parseInt(document.getElementById("lootTech").innerHTML);
+    document.getElementById("storedParts").innerHTML = parseInt(document.getElementById("storedParts").innerHTML)+parseInt(document.getElementById("lootParts").innerHTML);
+    document.getElementById("storedRubber").innerHTML = parseInt(document.getElementById("storedRubber").innerHTML)+parseInt(document.getElementById("lootRubber").innerHTML);  
+}
+
 
 function salvageItem() {
     console.log("implementar SALVAGE");
@@ -207,7 +233,28 @@ function sellItem(){
 
 function closeModal(){
     document.getElementById("click2").play();
-    document.getElementById("modalFunds").style.display=['none'];    
+    document.getElementById("modalScreen").style.display=['none'];    
+    document.getElementById("modalScreenLoot").style.display=['none'];    
+}
+
+function closeModalLoot(){
+    document.getElementById("click2").play();
+
+    var lootJunk = parseInt(document.getElementById("lootJunk").innerHTML);
+    var lootPlastic = parseInt(document.getElementById("lootPlastic").innerHTML);
+    var lootTech = parseInt(document.getElementById("lootTech").innerHTML);
+    var lootParts = parseInt(document.getElementById("lootParts").innerHTML);
+    var lootRubber = parseInt(document.getElementById("lootRubber").innerHTML);
+
+    document.getElementById("lootJunk").innerHTML = lootJunk * 0;
+    document.getElementById("lootPlastic").innerHTML = lootPlastic * 0;
+    document.getElementById("lootTech").innerHTML = lootTech * 0;
+    document.getElementById("lootParts").innerHTML = lootParts * 0;
+    document.getElementById("lootRubber").innerHTML = lootRubber * 0;
+    
+
+
+    document.getElementById("modalScreenLoot").style.display=['none'];    
 }
 
 
