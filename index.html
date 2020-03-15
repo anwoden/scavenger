@@ -198,7 +198,11 @@
                         </div>
                         <div class="action">
                             <div class="send">
-                                <input class="sendBtn blue" type="button" value="SEND CART" onclick="sendCart(); clickAudio()">
+                                <input class="sendBtn blue" type="button" value="SEND CART" onclick="sendCart(); clickAudio()" id="send">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="send">
+                                <input class="waitBtn" style="display: none;" type="button" value="PLEASE WAIT" id="wait">
                             </div>
                             <div class="other">
                                 <input class="actBtn green" type="button" value="SALVAGE" onclick="salvageItem(); clickAudio2()">

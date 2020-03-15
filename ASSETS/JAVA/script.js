@@ -194,9 +194,15 @@ function buyItem(){
 }
 
 function sendCart(){
+    document.getElementById("send").style.display=['none'];
+    document.getElementById("wait").style.display=['block'];
     setTimeout(() => {
         getLoot();
-    }, 3000);
+    }, 180000); //3minutes
+    setTimeout(()=> {
+        document.getElementById("send").style.display=['block'];
+        document.getElementById("wait").style.display=['none'];
+    }, 240000); //1min cooldown
 }
 
 function getLoot(){

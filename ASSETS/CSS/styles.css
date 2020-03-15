@@ -141,6 +141,24 @@ table th .green:hover{
     cursor: pointer;
     text-align: center;
 }
+.waitBtn{
+    width: 200px;
+    height: 59px;
+    margin-top: 5px;
+    background-color: transparent;
+    border: solid 2px white;
+    outline: none;
+    color: white;
+    font-family: "Pixeled Regular";
+    cursor: pointer;
+    text-align: center;
+}
+.disable{
+    display: none;
+}
+.enable {
+    display: block;
+}
 .actBtn {
     text-align: center;
     outline: none;
@@ -328,3 +346,6 @@ table th .green:hover{
 .OKbutton:hover{
     animation: pulse5 1s ease infinite;
 }
+
+
+/*Barras progresso teste*/
