@@ -128,6 +128,10 @@ table th .green:hover{
     width: 400px;
     justify-content: center;
 }
+.buttons1 {
+    display: flex;
+    flex-direction: column;
+}
 .sendBtn{
     outline: none;
     width: 200px;
@@ -349,3 +353,32 @@ table th .green:hover{
 
 
 /*Barras progresso teste*/
+.progress{
+    width: 198px;
+    height: 5px;
+    margin-top: 5px;
+    border: solid 1px white;
+}
+.progress-bar{
+    height: 5px;
+    animation: cooldown 180s ease-in-out;
+}
+.cooldown{
+    width: 198px;
+    height: 5px;
+    margin-top: 5px;
+    border: solid 1px white;
+}
+.progress-bar-down{
+    height: 5px;
+    animation: cooldown2 60s ease-in-out;
+}
+
+@keyframes cooldown {
+    0% {width: 0%; background-color: white;}
+    100% {width: 100%; background-color: white;}
+}
+@keyframes cooldown2 {
+    0% {width: 100%; background-color: white;}
+    100% {width: 0%; background-color: white;}
+}

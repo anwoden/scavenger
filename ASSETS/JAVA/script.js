@@ -192,18 +192,26 @@ function buyItem(){
     document.getElementById("storedCables").innerHTML = parseInt(document.getElementById("storedCables").innerHTML)+amountCables;
     cancel();     
 }
-
+//loot
 function sendCart(){
     document.getElementById("send").style.display=['none'];
     document.getElementById("wait").style.display=['block'];
-    setTimeout(() => {
+
+    document.getElementById("loading").style.display=['block'];
+
+    setTimeout(() => {        
         getLoot();
     }, 180000); //3minutes
+
+    document.getElementById("bar2").style.display=['block'];
     setTimeout(()=> {
         document.getElementById("send").style.display=['block'];
         document.getElementById("wait").style.display=['none'];
+        document.getElementById("loading").style.display=['none'];
     }, 240000); //1min cooldown
+    
 }
+
 
 function getLoot(){
     document.getElementById("erroraudio").play(); 
@@ -228,13 +236,44 @@ function getLoot(){
     document.getElementById("storedRubber").innerHTML = parseInt(document.getElementById("storedRubber").innerHTML)+parseInt(document.getElementById("lootRubber").innerHTML);  
 }
 
-
+//salvage & sell
 function salvageItem() {
     console.log("implementar SALVAGE");
 }
 
 function sellItem(){
-    console.log("implementar VENDA");
+    var junk = document.getElementById("storedJunk").innerHTML;
+    var plastic = document.getElementById("storedPlastic").innerHTML;
+    var tech = document.getElementById("storedTech").innerHTML;
+    var parts = document.getElementById("storedParts").innerHTML;
+    var rubber = document.getElementById("storedRubber").innerHTML;
+
+    var junkV = 10;
+    var plasticV = 15;
+    var techV = 25;
+    var partsV = 5; 
+    var rubberV = 15;
+
+    var a = (parseInt(junk)*junkV);
+    var b = (parseInt(plastic)*plasticV);
+    var c = (parseInt(tech)*techV);
+    var d = (parseInt(parts)*partsV);
+    var e = (parseInt(rubber)*rubberV);
+
+    var loot = a+b+d+c+e;
+    
+    document.getElementById("wallet").innerHTML = parseInt(document.getElementById("wallet").innerHTML)+loot;
+
+    reset(); 
+
+    function reset(){
+        document.getElementById("storedJunk").innerHTML = junk * 0;
+        document.getElementById("storedPlastic").innerHTML = plastic * 0;
+        document.getElementById("storedTech").innerHTML = tech * 0;
+        document.getElementById("storedParts").innerHTML = parts * 0;
+        document.getElementById("storedRubber").innerHTML = rubber * 0;
+    }
+
 }
 
 function closeModal(){
@@ -275,12 +314,5 @@ function purchaseAudio(){
 function clickAudio2() {
     document.getElementById("click2").play();
 }
-
-//LOOTS:
-
-
-//CART:
-
-
 
 //CRAFT:

@@ -142,7 +142,7 @@
                             <table>
                                 <tr>
                                     <th>CREDITS:</th>
-                                    <th id="wallet">999</th>
+                                    <th id="wallet">200</th>
                                 </tr>
                             </table>
                         </div>
@@ -197,12 +197,19 @@
                             </div>
                         </div>
                         <div class="action">
-                            <div class="send">
-                                <input class="sendBtn blue" type="button" value="SEND CART" onclick="sendCart(); clickAudio()" id="send">
-                                <div class="progress"></div>
-                            </div>
-                            <div class="send">
-                                <input class="waitBtn" style="display: none;" type="button" value="PLEASE WAIT" id="wait">
+                            <div class="buttons1">
+                                <div class="send">
+                                    <input class="sendBtn blue" type="button" value="SEND CART" onclick="sendCart(); clickAudio()" id="send">
+                                </div>
+                                <div class="send">
+                                    <input class="waitBtn" style="display: none;" type="button" value="PLEASE WAIT" id="wait">
+                                </div>
+                                <div class="progress" style="display: none;" id="loading">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <div class="cooldown" style="display: none;" id="coolDown">
+                                    <div class="progress-bar-down" style="display: none;" id="bar2"></div>
+                                </div>
                             </div>
                             <div class="other">
                                 <input class="actBtn green" type="button" value="SALVAGE" onclick="salvageItem(); clickAudio2()">
