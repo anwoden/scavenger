@@ -136,7 +136,6 @@ table th .green:hover{
     outline: none;
     width: 200px;
     height: 63px;
-    margin-top: 5px;
     background-color: transparent;
     outline: none;
     border: solid 1px white;
@@ -148,14 +147,13 @@ table th .green:hover{
 .waitBtn{
     width: 200px;
     height: 63px;
-    margin-top: 5px;
     background-color: transparent;
     border: solid 1px white;
     outline: none;
     color: white;
     font-family: "Pixeled Regular";
     cursor: pointer;
-    animation: pulse6 1s ease infinite;
+    animation: pulse3 1s ease infinite;
     text-align: center;
 }
 .disable{
@@ -167,14 +165,13 @@ table th .green:hover{
 .actBtn {
     text-align: center;
     outline: none;
+    height: 63px;
     width: 200px;
     background-color: transparent;
     color: white;
     border: solid 1px white;
-    margin-top: 5px;
     margin-left: 5px;
     font-family: "Pixeled Regular";
-    font-size: 9px;
     cursor: pointer;
 }
 .blue:hover{
@@ -401,8 +398,4 @@ table th .green:hover{
 @keyframes cooldown {
     0% {width: 0%; background-color: white;}
     100% {width: 100%; background-color: white;}
-}
-@keyframes cooldown2 {
-    0% {width: 100%; background-color: white;}
-    100% {width: 0%; background-color: #2a6fbe;}
 }

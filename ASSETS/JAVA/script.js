@@ -221,44 +221,40 @@ function getLoot(){
     var lootPlastic = parseInt(document.getElementById("lootPlastic").innerHTML);
     var lootTech = parseInt(document.getElementById("lootTech").innerHTML);
     var lootParts = parseInt(document.getElementById("lootParts").innerHTML);
-    var lootRubber = parseInt(document.getElementById("lootRubber").innerHTML);
+    var lootCopper = parseInt(document.getElementById("lootCopper").innerHTML);
 
     document.getElementById("lootJunk").innerHTML = lootJunk + Math.floor(Math.random()*15);
     document.getElementById("lootPlastic").innerHTML = lootPlastic + Math.floor(Math.random()*10);
     document.getElementById("lootTech").innerHTML = lootTech + Math.floor(Math.random()*5);
     document.getElementById("lootParts").innerHTML = lootParts + Math.floor(Math.random()*20);
-    document.getElementById("lootRubber").innerHTML = lootRubber + Math.floor(Math.random()*15);
+    document.getElementById("lootCopper").innerHTML = lootCopper + Math.floor(Math.random()*15);
 
     document.getElementById("storedJunk").innerHTML = parseInt(document.getElementById("storedJunk").innerHTML)+parseInt(document.getElementById("lootJunk").innerHTML);
     document.getElementById("storedPlastic").innerHTML = parseInt(document.getElementById("storedPlastic").innerHTML)+parseInt(document.getElementById("lootPlastic").innerHTML);
     document.getElementById("storedTech").innerHTML = parseInt(document.getElementById("storedTech").innerHTML)+parseInt(document.getElementById("lootTech").innerHTML);
     document.getElementById("storedParts").innerHTML = parseInt(document.getElementById("storedParts").innerHTML)+parseInt(document.getElementById("lootParts").innerHTML);
-    document.getElementById("storedRubber").innerHTML = parseInt(document.getElementById("storedRubber").innerHTML)+parseInt(document.getElementById("lootRubber").innerHTML);  
+    document.getElementById("storedCopper").innerHTML = parseInt(document.getElementById("storedCopper").innerHTML)+parseInt(document.getElementById("lootCopper").innerHTML);  
 }
 
-//salvage & sell
-function salvageItem() {
-    console.log("implementar SALVAGE");
-}
-
+//sell
 function sellItem(){
     var junk = document.getElementById("storedJunk").innerHTML;
     var plastic = document.getElementById("storedPlastic").innerHTML;
     var tech = document.getElementById("storedTech").innerHTML;
     var parts = document.getElementById("storedParts").innerHTML;
-    var rubber = document.getElementById("storedRubber").innerHTML;
+    var copper = document.getElementById("storedCopper").innerHTML;
 
     var junkV = 10;
     var plasticV = 15;
     var techV = 25;
     var partsV = 5; 
-    var rubberV = 15;
+    var copperV = 15;
 
     var a = (parseInt(junk)*junkV);
     var b = (parseInt(plastic)*plasticV);
     var c = (parseInt(tech)*techV);
     var d = (parseInt(parts)*partsV);
-    var e = (parseInt(rubber)*rubberV);
+    var e = (parseInt(copper)*copperV);
 
     var loot = a+b+d+c+e;
     
@@ -271,7 +267,7 @@ function sellItem(){
         document.getElementById("storedPlastic").innerHTML = plastic * 0;
         document.getElementById("storedTech").innerHTML = tech * 0;
         document.getElementById("storedParts").innerHTML = parts * 0;
-        document.getElementById("storedRubber").innerHTML = rubber * 0;
+        document.getElementById("storedCopper").innerHTML = copper * 0;
     }
 
 }
@@ -289,13 +285,13 @@ function closeModalLoot(){
     var lootPlastic = parseInt(document.getElementById("lootPlastic").innerHTML);
     var lootTech = parseInt(document.getElementById("lootTech").innerHTML);
     var lootParts = parseInt(document.getElementById("lootParts").innerHTML);
-    var lootRubber = parseInt(document.getElementById("lootRubber").innerHTML);
+    var lootCopper = parseInt(document.getElementById("lootCopper").innerHTML);
 
     document.getElementById("lootJunk").innerHTML = lootJunk * 0;
     document.getElementById("lootPlastic").innerHTML = lootPlastic * 0;
     document.getElementById("lootTech").innerHTML = lootTech * 0;
     document.getElementById("lootParts").innerHTML = lootParts * 0;
-    document.getElementById("lootRubber").innerHTML = lootRubber * 0;
+    document.getElementById("lootCopper").innerHTML = lootCopper * 0;
     
 
 
