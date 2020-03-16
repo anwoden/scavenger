@@ -197,18 +197,18 @@ function sendCart(){
     document.getElementById("send").style.display=['none'];
     document.getElementById("wait").style.display=['block'];
 
-    document.getElementById("loading").style.display=['block'];
+    document.getElementById("sendBar").style.display=['block'];
 
     setTimeout(() => {        
         getLoot();
     }, 180000); //3minutes
 
-    document.getElementById("bar2").style.display=['block'];
+
     setTimeout(()=> {
         document.getElementById("send").style.display=['block'];
         document.getElementById("wait").style.display=['none'];
-        document.getElementById("loading").style.display=['none'];
-    }, 240000); //1min cooldown
+        document.getElementById("sendBar").style.display=['none'];
+    }, 210000); //1min cooldown
     
 }
 

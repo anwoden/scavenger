@@ -135,11 +135,11 @@ table th .green:hover{
 .sendBtn{
     outline: none;
     width: 200px;
-    height: 59px;
+    height: 63px;
     margin-top: 5px;
     background-color: transparent;
     outline: none;
-    border: none;
+    border: solid 1px white;
     color: white;
     font-family: "Pixeled Regular";
     cursor: pointer;
@@ -147,14 +147,15 @@ table th .green:hover{
 }
 .waitBtn{
     width: 200px;
-    height: 59px;
+    height: 63px;
     margin-top: 5px;
     background-color: transparent;
-    border: solid 2px white;
+    border: solid 1px white;
     outline: none;
     color: white;
     font-family: "Pixeled Regular";
     cursor: pointer;
+    animation: pulse6 1s ease infinite;
     text-align: center;
 }
 .disable{
@@ -169,7 +170,7 @@ table th .green:hover{
     width: 200px;
     background-color: transparent;
     color: white;
-    border: none;
+    border: solid 1px white;
     margin-top: 5px;
     margin-left: 5px;
     font-family: "Pixeled Regular";
@@ -255,6 +256,18 @@ table th .green:hover{
     }
     100% {
         background-color: #2a6fbe;
+    }
+}
+
+@keyframes pulse6 {
+    0% {
+        background-color: #000000;
+    }
+    50% {
+        background-color: #999999;
+    }
+    100% {
+        background-color: #000000;
     }
 }
 
@@ -354,6 +367,8 @@ table th .green:hover{
 
 /*Barras progresso teste*/
 .progress{
+    display: flex;
+    flex-direction: column;
     width: 198px;
     height: 5px;
     margin-top: 5px;
@@ -361,7 +376,15 @@ table th .green:hover{
 }
 .progress-bar{
     height: 5px;
-    animation: cooldown 180s ease-in-out;
+    animation: cooldown 210s ease-in-out;
+}
+.mark {
+    height: 5px;
+}
+.mark img {
+    margin-left: 137px;
+    height: 7px;
+    margin-bottom: 8px;
 }
 .cooldown{
     width: 198px;
@@ -371,6 +394,7 @@ table th .green:hover{
 }
 .progress-bar-down{
     height: 5px;
+    width: 100%;
     animation: cooldown2 60s ease-in-out;
 }
 
@@ -380,5 +404,5 @@ table th .green:hover{
 }
 @keyframes cooldown2 {
     0% {width: 100%; background-color: white;}
-    100% {width: 0%; background-color: white;}
+    100% {width: 0%; background-color: #2a6fbe;}
 }
