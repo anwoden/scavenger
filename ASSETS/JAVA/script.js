@@ -1,3 +1,4 @@
+//Items shop
 //função para + e - no item STEEL
 function addSteel() {
     var initial = parseInt(document.getElementById("steel").innerHTML);
@@ -132,6 +133,7 @@ function minusCables() {
         document.getElementById("totalCables").innerHTML = document.getElementById("totalCables").innerHTML - 20;
     } 
 }
+//Fim do item shop
 
 
 //limpa os campos de quantidade, preço e soma
@@ -150,7 +152,7 @@ function cancel(){
 }
 
 
-//atualiza o campo de soma total da compra
+//atualiza o campo de soma total da compra (ver de fazer automático)
 function valueTotal() {
     var a = parseInt(document.getElementById("totalSteel").innerHTML);
     var b = parseInt(document.getElementById("totalPoly").innerHTML);
@@ -162,7 +164,7 @@ function valueTotal() {
 }
 
 
-
+//buy
 function buyItem(){
     var check = parseInt(valueTotal());
     var wallet = parseInt(document.getElementById("wallet").innerHTML);
@@ -208,11 +210,9 @@ function sendCart(){
         document.getElementById("send").style.display=['block'];
         document.getElementById("wait").style.display=['none'];
         document.getElementById("sendBar").style.display=['none'];
-    }, 210000); //1min cooldown
-    
+    }, 210000); //1min cooldown 
 }
-
-
+//loot2
 function getLoot(){
     document.getElementById("erroraudio").play(); 
     document.getElementById("modalScreenLoot").style.display=['block'];
@@ -235,7 +235,6 @@ function getLoot(){
     document.getElementById("storedParts").innerHTML = parseInt(document.getElementById("storedParts").innerHTML)+parseInt(document.getElementById("lootParts").innerHTML);
     document.getElementById("storedCopper").innerHTML = parseInt(document.getElementById("storedCopper").innerHTML)+parseInt(document.getElementById("lootCopper").innerHTML);  
 }
-
 //sell
 function sellItem(){
     var junk = document.getElementById("storedJunk").innerHTML;
@@ -269,13 +268,12 @@ function sellItem(){
         document.getElementById("storedParts").innerHTML = parts * 0;
         document.getElementById("storedCopper").innerHTML = copper * 0;
     }
-
 }
 
+//janelas popup
 function closeModal(){
     document.getElementById("click2").play();
-    document.getElementById("modalScreen").style.display=['none'];    
-    document.getElementById("modalScreenLoot").style.display=['none'];    
+    document.getElementById("modalScreen").style.display=['none'];
 }
 
 function closeModalLoot(){
@@ -291,13 +289,10 @@ function closeModalLoot(){
     document.getElementById("lootPlastic").innerHTML = lootPlastic * 0;
     document.getElementById("lootTech").innerHTML = lootTech * 0;
     document.getElementById("lootParts").innerHTML = lootParts * 0;
-    document.getElementById("lootCopper").innerHTML = lootCopper * 0;
-    
-
+    document.getElementById("lootCopper").innerHTML = lootCopper * 0;  
 
     document.getElementById("modalScreenLoot").style.display=['none'];    
 }
-
 
 
 //audios
@@ -312,3 +307,80 @@ function clickAudio2() {
 }
 
 //CRAFT:
+function craftPc(){
+
+    var steel = parseInt(document.getElementById("storedSteel").innerHTML);
+    var poly = parseInt(document.getElementById("storedPoly").innerHTML);
+    var circ = parseInt(document.getElementById("storedCirc").innerHTML);
+    var solder = parseInt(document.getElementById("storedSolder").innerHTML);
+    var cables = parseInt(document.getElementById("storedCables").innerHTML);
+    var pcs = parseInt(document.getElementById("howmanyPC").innerHTML);
+
+    if (steel >= 1){
+        if(poly >= 4){
+            if(circ >= 8){
+                if(solder >= 5) {
+                    if(cables >= 3){
+                        windowPC();
+                        document.getElementById("storedSteel").innerHTML = steel - 1;
+                        document.getElementById("storedPoly").innerHTML = poly - 4;
+                        document.getElementById("storedCirc").innerHTML = circ - 8;
+                        document.getElementById("storedSolder").innerHTML = solder - 5;
+                        document.getElementById("storedCables").innerHTML = cables - 3;
+                        document.getElementById("howmanyPC").innerHTML = pcs + 1;
+                    }
+                }
+            }
+        }
+    } else {
+        document.getElementById("erroraudio").play();
+        document.getElementById("modalScreenCraft").style.display=['block'];
+    }
+
+
+}
+
+function windowPC(){
+    var modal = document.getElementById("loadPC");
+    modal.style.display=['block'];
+    document.getElementById("buttonCraft").style.display=['none'];
+    document.getElementById("click").play();
+
+    setTimeout(()=>{
+        document.getElementById("erroraudio").play();
+        document.getElementById("craftInProgress").style.display=['none'];
+        document.getElementById("craftDone").style.display=['block'];
+        document.getElementById("buttonCraft").style.display=['block'];
+    }, 5200);
+}
+function closeCraft() {
+    document.getElementById("click2").play();
+    document.getElementById("loadPC").style.display=['none'];
+    document.getElementById("craftDone").style.display=['none'];    
+}
+function sellPC(){
+    var wallet = parseInt(document.getElementById("wallet").innerHTML);
+    var price = parseInt(document.getElementById("pcPrice").innerHTML);
+    var pcs = parseInt(document.getElementById("howmanyPC").innerHTML);
+
+    
+    if(pcs >= 1){
+        document.getElementById("wallet").innerHTML = wallet + price*pcs;
+        document.getElementById("howmanyPC").innerHTML = 0;
+    }
+}
+function closeModalCraft(){
+    document.getElementById("click").play();
+    document.getElementById("modalScreenCraft").style.display=['none'];
+}
+
+//botões do craft
+function showPC(){
+    var screen = document.getElementById("PC");
+
+    if(screen.style.display==='none'){
+        screen.style.display=['block'];
+    } else if (screen.style.display==['block']){
+        screen.style.display=['none'];
+    }
+}

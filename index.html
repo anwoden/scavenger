@@ -24,6 +24,16 @@
                 </div>
             </div>
         </div>
+        <div class="modalwindow" style="display:none;" id="modalScreenCraft">
+            <div class="modalcontent">
+                <div class="modaltitle">
+                    <h1>INSUFFICIENT ITEMS</h1>
+                </div>
+                <div class="closemodal">
+                    <h1 class="closebtn" onclick="closeModalCraft()">OK</h1>
+                </div>
+            </div>
+        </div>
         <div class="modalwindow" style="display: none;" id="modalScreenLoot">
             <div class="modalLoot">
                 <div class="LootTitle">
@@ -143,7 +153,7 @@
                             <table>
                                 <tr>
                                     <th>CREDITS:</th>
-                                    <th id="wallet">200</th>
+                                    <th id="wallet">2000</th>
                                 </tr>
                             </table>
                         </div>
@@ -217,7 +227,81 @@
                     </div>
                     <div class="right">
                         <div class="craftPanel">
-                           
+                           <div class="upperPanel">
+                               <div class="square orange" onclick="showPC()">COMPUTER</div>
+                               <div class="square green">RADAR</div>
+                               <div class="square blue">EMP DEVICE</div>
+                               <div class="square last red">JAMMER</div>
+                           </div>
+                           <div class="lowerpanel-loadingPC" id="loadPC" style="display: none;">
+                               <div class="timeout">
+                                    <div class="waiting" id="craftInProgress" style="display: block;">
+                                       <a>PLEASE WAIT</a>
+                                    </div>
+                                    <div class="waiting" id="craftDone" style="display: none;">
+                                        <a>DONE!</a>
+                                     </div>
+                                    <div class="loadbar">
+                                        <div class="loadPC"></div>
+                                        <h1 class="buttonCraft" id="buttonCraft" style="display: none;" onclick="closeCraft()">OK</h1>
+                                    </div>
+                                </div>
+                           </div>
+                           <div class="lowerpanel" style="display: none;" id="PC">
+                               <div class="craft active">
+                                   <div class="icon">
+                                       <div class="iconimagePC">
+                                           <img src="ASSETS/IMG/computer.svg" width="199">
+                                       </div>
+                                       <div class="actionarea">
+                                           <table>
+                                               <tr>
+                                                   <th>AMOUNT:</th>
+                                                   <th id="howmanyPC">0</th>
+                                               </tr>
+                                               <tr>
+                                                <th>SELL PRICE:</th>
+                                                <th id="pcPrice">1250</th>
+                                            </tr>
+                                           </table>
+                                       </div>
+                                   </div>
+                                   <div class="recipe">
+                                        <div class="list-items">
+                                            <table>
+                                                <tr>
+                                                    <th class="name">STEEL:</th>
+                                                    <th>1</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="name">POLYMER:</th>
+                                                    <th>4</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="name">CIRCUITS:</th>
+                                                    <th>8</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="name">SOLDERING IRON:</th>
+                                                    <th>5</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="name">CABLES:</th>
+                                                    <th>3</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="actionarea">
+                                            <div class="craftBtn blue" onclick="craftPc()">
+                                                <a>CRAFT</a>
+                                            </div>
+                                            <div class="craftBtn red" onclick="sellPC();purchaseAudio()">
+                                                <a>SELL</a>
+                                            </div>
+                                        </div>
+                                   </div>
+                               </div>
+                           </div>
                         </div>
                     </div>
                 </div>

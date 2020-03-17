@@ -135,10 +135,10 @@ table th .green:hover{
 .sendBtn{
     outline: none;
     width: 200px;
-    height: 63px;
+    height: 57px;
     background-color: transparent;
     outline: none;
-    border: solid 1px white;
+    border: solid 2px white;
     color: white;
     font-family: "Pixeled Regular";
     cursor: pointer;
@@ -146,9 +146,9 @@ table th .green:hover{
 }
 .waitBtn{
     width: 200px;
-    height: 63px;
+    height: 57px;
     background-color: transparent;
-    border: solid 1px white;
+    border: solid 2px white;
     outline: none;
     color: white;
     font-family: "Pixeled Regular";
@@ -165,11 +165,11 @@ table th .green:hover{
 .actBtn {
     text-align: center;
     outline: none;
-    height: 63px;
+    height: 57px;
     width: 200px;
     background-color: transparent;
     color: white;
-    border: solid 1px white;
+    border: solid 2px white;
     margin-left: 5px;
     font-family: "Pixeled Regular";
     cursor: pointer;
@@ -186,14 +186,139 @@ table th .green:hover{
     margin-top: 12px;
 }
 .craftPanel {
-    background-color: azure;
     display: flex;
+    flex-direction: column;
     width: 400px;
     height: 293px;
-    margin-left: 2px;
-    
+    margin-left: 2px;    
 }
-
+.upperPanel{
+    height: 40px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 2px white;
+}
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border-top: solid 2px white;
+    border-left: solid 2px white;
+    cursor: pointer;
+}
+.last {
+    border-right: solid 2px white;
+}
+.lowerpanel{
+    height: 243px;
+    border-left: solid 2px white;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+}
+.craft {
+    display: flex;
+}
+.icon {
+    width: 198px;
+    height: 243px;
+    border-right: solid 1px white;
+}
+.iconimagePC {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #515251, #413d3d);
+    width: 198px;
+    height: 138px;
+    border-bottom: solid 1px white;
+}
+.recipe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list-items {
+    display: flex;
+    flex-direction: column;
+}
+.recipe table {
+    margin-top: 5px;
+    font-size: 8px;
+    width: 200px;
+    height: 100px;
+}
+.recipe table th {
+    height: 20px;
+    width: 25px;
+    text-align: center;
+}
+.actionarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 100px;
+}
+.craftBtn{
+    border: solid 1px white;
+    background-color:transparent;
+    width: 100px;
+    height: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 8px;
+    font-family: "Pixeled Regular";
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+/*modal buy item*/
+.lowerpanel-loadingPC{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 40px;
+    height: 247px;
+    width: 396px;
+    background-color: #707070;
+    border: solid 2px white;
+}
+.waiting {
+    font-size: 25px;
+    margin-top: 35px;
+}
+.loadbar {
+    width: 300px;
+    margin: auto;
+    height: 10px;
+    border: solid 1px white;
+}
+.loadPC {
+    width: 300px;
+    height: 10px;
+    animation: crafting 5s ease 0s normal forwards;
+}
+.timeout {
+    margin-bottom: 35px;
+}
+.buttonCraft {
+    margin: auto;
+    margin-top: 20px;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    border: solid 2px white;
+    cursor: pointer;
+}
+.buttonCraft:hover{
+    animation: pulse7 1s ease infinite;
+}
 
 /*test pulse*/
 @keyframes pulse {
@@ -261,11 +386,28 @@ table th .green:hover{
         background-color: #000000;
     }
     50% {
-        background-color: #999999;
+        background-color: #707070;
     }
     100% {
         background-color: #000000;
     }
+}
+
+@keyframes pulse7 {
+    0% {
+        background-color: #707070;
+    }
+    50% {
+        background-color: #dfdfdf;
+    }
+    100% {
+        background-color: #707070;
+    }
+}
+
+@keyframes crafting {
+    0% {width: 0%; background-color: white;}
+    100% {width: 100%; background-color: white;}
 }
 
 /*modal funds teste*/
@@ -287,8 +429,10 @@ table th .green:hover{
     justify-content: center;
     align-items: center;
 }
+
 .modaltitle{
     width: 450px;
+    height: 70px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -373,7 +517,7 @@ table th .green:hover{
 }
 .progress-bar{
     height: 5px;
-    animation: cooldown 210s ease-in-out;
+    animation: cooldownSend 210s ease-in-out;
 }
 .mark {
     height: 5px;
@@ -389,13 +533,12 @@ table th .green:hover{
     margin-top: 5px;
     border: solid 1px white;
 }
-.progress-bar-down{
-    height: 5px;
-    width: 100%;
-    animation: cooldown2 60s ease-in-out;
-}
 
-@keyframes cooldown {
+@keyframes cooldownSend {
     0% {width: 0%; background-color: white;}
     100% {width: 100%; background-color: white;}
+}
+
+.orange:hover {
+    animation: pulse6 1s ease infinite;
 }
