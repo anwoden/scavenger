@@ -336,8 +336,6 @@ function craftPc(){
         document.getElementById("erroraudio").play();
         document.getElementById("modalScreenCraft").style.display=['block'];
     }
-
-
 }
 
 function windowPC(){
@@ -356,7 +354,8 @@ function windowPC(){
 function closeCraft() {
     document.getElementById("click2").play();
     document.getElementById("loadPC").style.display=['none'];
-    document.getElementById("craftDone").style.display=['none'];    
+    document.getElementById("craftDone").style.display=['none']; 
+    document.getElementById("craftInProgress").style.display=['block'];   
 }
 function sellPC(){
     var wallet = parseInt(document.getElementById("wallet").innerHTML);
@@ -373,13 +372,252 @@ function closeModalCraft(){
     document.getElementById("click").play();
     document.getElementById("modalScreenCraft").style.display=['none'];
 }
+//RADAR
+function craftRD(){
+
+    var steel = parseInt(document.getElementById("storedSteel").innerHTML);
+    var poly = parseInt(document.getElementById("storedPoly").innerHTML);
+    var circ = parseInt(document.getElementById("storedCirc").innerHTML);
+    var solder = parseInt(document.getElementById("storedSolder").innerHTML);
+    var cables = parseInt(document.getElementById("storedCables").innerHTML);
+    var rds = parseInt(document.getElementById("howmanyRD").innerHTML);
+
+    if (steel >= 1){
+        if(poly >= 2){
+            if(circ >= 2){
+                if(solder >= 6) {
+                    if(cables >= 8){
+                        windowRD();
+                        document.getElementById("storedSteel").innerHTML = steel - 1;
+                        document.getElementById("storedPoly").innerHTML = poly - 2;
+                        document.getElementById("storedCirc").innerHTML = circ - 2;
+                        document.getElementById("storedSolder").innerHTML = solder - 6;
+                        document.getElementById("storedCables").innerHTML = cables - 8;
+                        document.getElementById("howmanyRD").innerHTML = rds + 1;
+                    }
+                }
+            }
+        }
+    } else {
+        document.getElementById("erroraudio").play();
+        document.getElementById("modalScreenCraft").style.display=['block'];
+    }
+}
+
+function windowRD(){
+    var modal = document.getElementById("loadRD");
+    modal.style.display=['block'];
+    document.getElementById("buttonCraftRD").style.display=['none'];
+    document.getElementById("click").play();
+
+    setTimeout(()=>{
+        document.getElementById("erroraudio").play();
+        document.getElementById("craftInProgressRD").style.display=['none'];
+        document.getElementById("craftDoneRD").style.display=['block'];
+        document.getElementById("buttonCraftRD").style.display=['block'];
+    }, 5200);
+}
+function closeCraftRD() {
+    document.getElementById("click2").play();
+    document.getElementById("loadRD").style.display=['none'];
+    document.getElementById("craftDoneRD").style.display=['none'];  
+    document.getElementById("craftInProgressRD").style.display=['block'];  
+}
+function sellRD(){
+    var wallet = parseInt(document.getElementById("wallet").innerHTML);
+    var price = parseInt(document.getElementById("rdPrice").innerHTML);
+    var rds = parseInt(document.getElementById("howmanyRD").innerHTML);
+
+    
+    if(rds >= 1){
+        document.getElementById("wallet").innerHTML = wallet + price*rds;
+        document.getElementById("howmanyRD").innerHTML = 0;
+    }
+}
+//EMP
+function craftEMP(){
+
+    var steel = parseInt(document.getElementById("storedSteel").innerHTML);
+    var poly = parseInt(document.getElementById("storedPoly").innerHTML);
+    var circ = parseInt(document.getElementById("storedCirc").innerHTML);
+    var solder = parseInt(document.getElementById("storedSolder").innerHTML);
+    var cables = parseInt(document.getElementById("storedCables").innerHTML);
+    var emp = parseInt(document.getElementById("howmanyEMP").innerHTML);
+
+    if (steel >= 5){
+        if(poly >= 1){
+            if(circ >= 1){
+                if(solder >= 6) {
+                    if(cables >= 4){
+                        windowEMP();
+                        document.getElementById("storedSteel").innerHTML = steel - 5;
+                        document.getElementById("storedPoly").innerHTML = poly - 1;
+                        document.getElementById("storedCirc").innerHTML = circ - 1;
+                        document.getElementById("storedSolder").innerHTML = solder - 6;
+                        document.getElementById("storedCables").innerHTML = cables - 4;
+                        document.getElementById("howmanyEMP").innerHTML = emp + 1;
+                    }
+                }
+            }
+        }
+    } else {
+        document.getElementById("erroraudio").play();
+        document.getElementById("modalScreenCraft").style.display=['block'];
+    }
+}
+function windowEMP(){
+    var modal = document.getElementById("loadEMP");
+    modal.style.display=['block'];
+    document.getElementById("buttonCraftEMP").style.display=['none'];
+    document.getElementById("click").play();
+
+    setTimeout(()=>{
+        document.getElementById("erroraudio").play();
+        document.getElementById("craftInProgressEMP").style.display=['none'];
+        document.getElementById("craftDoneEMP").style.display=['block'];
+        document.getElementById("buttonCraftEMP").style.display=['block'];
+    }, 5200);
+}
+function closeCraftEMP() {
+    document.getElementById("click2").play();
+    document.getElementById("loadEMP").style.display=['none'];
+    document.getElementById("craftDoneEMP").style.display=['none'];  
+    document.getElementById("craftInProgressEMP").style.display=['block'];  
+}
+function sellEMP(){
+    var wallet = parseInt(document.getElementById("wallet").innerHTML);
+    var price = parseInt(document.getElementById("empPrice").innerHTML);
+    var emp = parseInt(document.getElementById("howmanyEMP").innerHTML);
+
+    
+    if(emp >= 1){
+        document.getElementById("wallet").innerHTML = wallet + price*emp;
+        document.getElementById("howmanyEMP").innerHTML = 0;
+    }
+}
+//JAMMER
+function craftJAM(){
+
+    var steel = parseInt(document.getElementById("storedSteel").innerHTML);
+    var poly = parseInt(document.getElementById("storedPoly").innerHTML);
+    var circ = parseInt(document.getElementById("storedCirc").innerHTML);
+    var solder = parseInt(document.getElementById("storedSolder").innerHTML);
+    var cables = parseInt(document.getElementById("storedCables").innerHTML);
+    var jam = parseInt(document.getElementById("howmanyJAM").innerHTML);
+
+    if (steel >= 6){
+        if(poly >= 3){
+            if(circ >= 3){
+                if(solder >= 1) {
+                    if(cables >= 2){
+                        windowJAM();
+                        document.getElementById("storedSteel").innerHTML = steel - 6;
+                        document.getElementById("storedPoly").innerHTML = poly - 3;
+                        document.getElementById("storedCirc").innerHTML = circ - 3;
+                        document.getElementById("storedSolder").innerHTML = solder - 1;
+                        document.getElementById("storedCables").innerHTML = cables - 2;
+                        document.getElementById("howmanyJAM").innerHTML = jam + 1;
+                    }
+                }
+            }
+        }
+    } else {
+        document.getElementById("erroraudio").play();
+        document.getElementById("modalScreenCraft").style.display=['block'];
+    }
+}
+function windowJAM(){
+    var modal = document.getElementById("loadJAM");
+    modal.style.display=['block'];
+    document.getElementById("buttonCraftJAM").style.display=['none'];
+    document.getElementById("click").play();
+
+    setTimeout(()=>{
+        document.getElementById("erroraudio").play();
+        document.getElementById("craftInProgressJAM").style.display=['none'];
+        document.getElementById("craftDoneJAM").style.display=['block'];
+        document.getElementById("buttonCraftJAM").style.display=['block'];
+    }, 5200);
+}
+function closeCraftJAM() {
+    document.getElementById("click2").play();
+    document.getElementById("loadJAM").style.display=['none'];
+    document.getElementById("craftDoneJAM").style.display=['none'];  
+    document.getElementById("craftInProgressJAM").style.display=['block'];  
+}
+function sellJAM(){
+    var wallet = parseInt(document.getElementById("wallet").innerHTML);
+    var price = parseInt(document.getElementById("jamPrice").innerHTML);
+    var jam = parseInt(document.getElementById("howmanyJAM").innerHTML);
+
+    
+    if(jam >= 1){
+        document.getElementById("wallet").innerHTML = wallet + price*jam;
+        document.getElementById("howmanyJAM").innerHTML = 0;
+    }
+}
+
 
 //botões do craft
 function showPC(){
     var screen = document.getElementById("PC");
+    var rd = document.getElementById("RADAR");
+    var emp = document.getElementById("EMP");
+    var jam = document.getElementById("JAMMER");
 
-    if(screen.style.display==='none'){
+    if(screen.style.display=='none'){
         screen.style.display=['block'];
+        rd.style.display=['none'];
+        emp.style.display=['none'];
+        jam.style.display=['none'];
+    } else if (screen.style.display==['block']){
+        screen.style.display=['none'];
+    }
+}
+
+function showRD(){
+    var screen = document.getElementById("RADAR");
+    var pc = document.getElementById("PC");
+    var emp = document.getElementById("EMP");
+    var jam = document.getElementById("JAMMER");
+
+    if(screen.style.display=='none'){
+        screen.style.display=['block'];
+        pc.style.display=['none'];
+        emp.style.display=['none'];
+        jam.style.display=['none'];
+    } else if (screen.style.display==['block']){
+        screen.style.display=['none'];
+    }
+}
+
+function showEmp(){
+    var screen = document.getElementById("EMP");
+    var pc = document.getElementById("PC");
+    var rd = document.getElementById("RADAR");
+    var jam = document.getElementById("JAMMER");
+
+    if(screen.style.display=='none'){
+        screen.style.display=['block'];
+        pc.style.display=['none'];
+        rd.style.display=['none'];
+        jam.style.display=['none'];
+    } else if (screen.style.display==['block']){
+        screen.style.display=['none'];
+    }
+}
+
+function showJam() {
+    var screen = document.getElementById("JAMMER");
+    var pc = document.getElementById("PC");
+    var rd = document.getElementById("RADAR");
+    var emp = document.getElementById("EMP");
+
+    if(screen.style.display=='none'){
+        screen.style.display=['block'];
+        pc.style.display=['none'];
+        rd.style.display=['none'];
+        emp.style.display=['none'];
     } else if (screen.style.display==['block']){
         screen.style.display=['none'];
     }
