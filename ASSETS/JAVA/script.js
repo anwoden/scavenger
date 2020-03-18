@@ -622,3 +622,7 @@ function showJam() {
         screen.style.display=['none'];
     }
 }
+
+function closeIntro() {
+    document.getElementById("modalScreenIntro").style.display=['none'];
+}

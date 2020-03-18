@@ -508,6 +508,47 @@ table th .green:hover{
     position: absolute;
     align-items: center;
 }
+/*intro*/
+.modalwindowIntro {
+    display: flex;
+    flex: 1;
+    height: 660px;
+    width: 900px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    align-items: center;
+}
+.textintro{
+    float: left;
+}
+.leftIntro{
+    text-align: justify;
+    display: flex;
+    width: 500px;
+    margin: 15px;    
+}
+.okIntro {
+    text-align: center;
+    width: 500px;
+    padding: 30px;
+    font-size: 25px;
+    border: solid 2px white;
+    cursor: pointer;
+}
+.okIntro:hover {
+    animation: pulse3 1s ease infinite;
+}
+.rightIntro {
+    float: right;
+    width: 300px;
+    height: 600px;
+    background-color: #be2a2a;
+    margin: 35px;
+    background-image: url(/ASSETS/IMG/wasteland.png);
+    
+}
+
+
 .modalcontent {
     width: 900px;
     height: 120px;
