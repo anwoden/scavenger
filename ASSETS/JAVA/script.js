@@ -203,14 +203,14 @@ function sendCart(){
 
     setTimeout(() => {        
         getLoot();
-    }, 180000); //3minutes
+    }, 70000);
 
 
     setTimeout(()=> {
         document.getElementById("send").style.display=['block'];
         document.getElementById("wait").style.display=['none'];
         document.getElementById("sendBar").style.display=['none'];
-    }, 210000); //1min cooldown 
+    }, 80000);
 }
 //loot2
 function getLoot(){

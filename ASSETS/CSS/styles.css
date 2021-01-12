@@ -7,8 +7,25 @@ body {
     flex: 1;
     justify-content: center;
     align-items: center;
-    font-family: "F25 Bank Printer";
+    font-family: "F25";
     user-select: none;
+    background-image: url(/ASSETS/IMG/BG.jpg);
+}
+
+@font-face {
+    font-family: 'F25';
+    src: url('/ASSETS/Font/f25_bank_printer-webfont.woff2') format('woff2'),
+         url('/ASSETS/Font/f25_bank_printer-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pixeled';
+    src: url('/ASSETS/Font/pixeled-webfont.woff2') format('woff2'),
+         url('/ASSETS/Font/pixeled-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /*site*/
@@ -39,7 +56,7 @@ body {
     border-right: solid 5px white;
     border-bottom: solid 5px white;
     font-size: 9px;
-    font-family: "Pixeled Regular";
+    font-family: "Pixeled";
 }
 table th{
     width: 300px;
@@ -140,7 +157,7 @@ table th .green:hover{
     outline: none;
     border: solid 2px white;
     color: white;
-    font-family: "Pixeled Regular";
+    font-family: "Pixeled";
     cursor: pointer;
     text-align: center;
 }
@@ -151,7 +168,7 @@ table th .green:hover{
     border: solid 2px white;
     outline: none;
     color: white;
-    font-family: "Pixeled Regular";
+    font-family: "Pixeled";
     cursor: pointer;
     animation: pulse3 1s ease infinite;
     text-align: center;
@@ -171,7 +188,7 @@ table th .green:hover{
     color: white;
     border: solid 2px white;
     margin-left: 5px;
-    font-family: "Pixeled Regular";
+    font-family: "Pixeled";
     cursor: pointer;
 }
 .blue:hover{
@@ -270,12 +287,12 @@ table th .green:hover{
 .list-items {
     display: flex;
     flex-direction: column;
+    height: 143px;
 }
 .recipe table {
     margin-top: 5px;
     font-size: 8px;
     width: 200px;
-    height: 100px;
 }
 .recipe table th {
     height: 20px;
@@ -288,7 +305,7 @@ table th .green:hover{
     align-items: center;
     justify-content: space-evenly;
     width: 200px;
-    height: 100px;
+    height: 100px; 
 }
 .craftBtn{
     border: solid 1px white;
@@ -298,7 +315,7 @@ table th .green:hover{
     color: white;
     font-weight: bold;
     font-size: 8px;
-    font-family: "Pixeled Regular";
+    font-family: "Pixeled";
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -646,7 +663,7 @@ table th .green:hover{
 }
 .progress-bar{
     height: 5px;
-    animation: cooldownSend 210s ease-in-out;
+    animation: cooldownSend 80s ease-in-out;
 }
 .mark {
     height: 5px;
@@ -671,3 +688,10 @@ table th .green:hover{
 .orange:hover {
     animation: pulse6 1s ease infinite;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        height: 750px;
+    }
+]}
